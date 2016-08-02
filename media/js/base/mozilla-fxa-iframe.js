@@ -59,6 +59,9 @@ Mozilla.FxaIframe = (function() {
             _src = _src.replace('context=iframe', 'context=fx_firstrun_v2');
         }
 
+        // add hostname to iframe src for embed authorization
+        _src += '&origin=' + window.location.hostname;
+
         // initialize GA event name
         _gaEventName = _config.gaEventName || 'fxa';
 
